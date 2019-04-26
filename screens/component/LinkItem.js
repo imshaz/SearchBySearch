@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, TouchableOpacity, Image } from 'react-native'
 import Icon from "react-native-vector-icons/FontAwesome5";
+
+import {Fonts} from '../../src/utils/Fonts'
 
 export default class LinkItem extends Component {
     constructor(props){
@@ -10,11 +12,11 @@ export default class LinkItem extends Component {
     render() {
         return (
             <View style={styles.icon}>
-                <Icon
-                    name={this.props.name}                    
-                    size={10}
-                />
-                <Text>{this.props.title}</Text>
+
+            <TouchableOpacity  onPress={()=>alert('what')} activeOpacity = { .5}>
+                 <Image style={{height:14,width:14, paddingRight:2}}  source={this.props.name}/>
+            </TouchableOpacity>
+                <Text  style={{fontSize:14, paddingLeft:10, fontFamily:Fonts.ProximaNova}}>{this.props.title}</Text>
             </View>
         )
     }
@@ -23,19 +25,15 @@ export default class LinkItem extends Component {
 const styles = StyleSheet.create({
 
     icon: {
-        flex:1, 
+        
         flexDirection:'row', 
         flexWrap:'wrap', 
         alignItems:'center',
-        alignContent:'space-between',
-        // 
+        marginBottom:10,
+     
         height:30, 
-        marginLeft:10
-        // paddingLeft:5, 
-        // paddingRight:5, 
-        // paddingTop: 15,         
-        // borderRadius: 4,
-        // borderWidth: 0.5,
-        // borderColor: '#d6d7da',
+        
+        paddingLeft:20, 
+
     }
 })

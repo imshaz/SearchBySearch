@@ -31,12 +31,12 @@ export default class CategoryList extends Component {
                 </View>
 
                
-                <View style={styles.circlebtn}>
+                {/* <View style={styles.circlebtn}>
 
                 <MaterialIcons color="gray" size={29} name="arrow-drop-down-circle"/> 
                 
                 
-                </View>
+                </View> */}
                
 
             </View>
@@ -53,16 +53,16 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         justifyContent: 'center',
 
-        borderRadius: 4,
-        borderWidth: 0.5,
-        borderColor: '#d6d7da',
+        // borderRadius: 4,
+        // borderWidth: 0.5,
+        // borderColor: '#d6d7da',
     },
     circlebtn: {
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        marginTop:-15
+        marginTop:10,
     }
 
 })

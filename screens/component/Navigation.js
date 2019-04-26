@@ -8,29 +8,10 @@ import Home from '../Home';
 import PhotoComponent from '../component/photo/PhotoComponent'
 import SignIn from "./Login/SignIn";
 import SignUp from "./Login/SignUp";
-
+import Verify from "./Login/Verify"
 import Index  from './Login/index'
+import ComponentList from './ComponentList'
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen</Text>
-        <Text onPress={()=>{this.props.navigation.navigate("Details")}}>Home Screen </Text>
-      </View>
-    );
-  }
-}
-
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text onPress={()=>{this.props.navigation.navigate("Photo")}}>Photo Screen </Text>
-      </View>
-    );
-  }
-}
 
 const AppNavigator = createStackNavigator({
   
@@ -42,19 +23,33 @@ const AppNavigator = createStackNavigator({
   
   }, 
   Photo:{
-    screen: PhotoComponent
-  },   
-  Details:{screen:DetailsScreen},
-  SignIn:{screen:Index}, 
-  // SignUP:{screen:SignUp}
-}
-// , 
-// {
-//   headerMode: 'none',
-//   navigationOptions: {
-//       headerVisible: false,
-  // }
-// }
-);
+    screen: PhotoComponent,
+    headerStyle: {
+      // backgroundColor: '#544849',
+      backgroundColor: 'black',
 
-export default createAppContainer(AppNavigator);
+    }
+  },
+ 
+  SignIn:{screen:SignIn},
+  SignUp:{screen:SignUp},  
+  Verify:{screen:Verify}, 
+  ComponentList:{screen:ComponentList}
+});
+
+AppNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    console.log("Navigation", navigation);
+    tabBarVisible = false;
+
+  }
+
+  return {
+    tabBarVisible,
+    
+  };
+};
+
+// export default createAppContainer(AppNavigator);
+export default AppNavigator; 

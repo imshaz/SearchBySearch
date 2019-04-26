@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
 import Icon from "react-native-vector-icons/FontAwesome5";
 
+import {Fonts} from '../../src/utils/Fonts'
+
 export default class CategoryItem extends Component {
     constructor(props){
         super(props)
@@ -12,10 +14,10 @@ export default class CategoryItem extends Component {
             <View  style={styles.icon}>
                 <Icon
                     name={this.props.name}                    
-                    size={20}
-                    color='black'
+                    size={18}
+                    color='#444F5C'
                 />
-                <Text>{this.props.title}</Text>
+                <Text style={{fontSize:12,paddingTop:10, color:'#5f5f5f',fontFamily:Fonts.ProximaNova }}>{this.props.title}</Text>
             </View>
         )
     }
@@ -29,8 +31,8 @@ const styles = StyleSheet.create({
         // justifyContent:'center',
         alignContent:'space-around', 
         alignItems:'center',        
-        width:80, 
-        height:80, 
+        width:75, 
+        height:75, 
         paddingLeft:5, 
         paddingRight:5, 
         paddingTop: 15, 

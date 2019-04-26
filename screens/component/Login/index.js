@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text , Image,StyleSheet } from "react-native";
 import { createStackNavigator, createAppContainer , createSwitchNavigator} from "react-navigation";
 
 
@@ -8,7 +8,8 @@ import SignUp from './SignUp'
 
 const AppNavigator = createStackNavigator({
   SignIn:{screen:SignIn,navigationOptions:{
-    header:null
+    header:null, 
+    
   }}, 
   SignUp:{screen:SignUp, 
     navigationOptions:{
@@ -18,4 +19,4 @@ const AppNavigator = createStackNavigator({
 
 );
 
-export default createAppContainer(AppNavigator);
+export default AppNavigator;

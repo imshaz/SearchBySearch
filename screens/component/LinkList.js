@@ -9,15 +9,14 @@ import LinkItem from '../component/LinkItem'
 export default class LinkList extends Component {
     render() {
         return (
-            <View>
+         
                 <View style={styles.componentContainer}>
-                    <LinkItem title="News" name="newspaper" />
-                    <LinkItem title="Live Tv" name="tv" />
-                    <LinkItem title="Movies Online" name="film" />
+                    <LinkItem title="News" name={require('../../assets/newsMid.png')}/>
+                    <LinkItem title="Live Tv" name={require("../../assets/LiveTv.png")}/>
+                    <LinkItem title="Movies Online" name={require("../../assets/MoviesOnline.png")} />
                 </View>
                 
 
-            </View>
         )
     }
 }
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'center'
+        justifyContent: 'flex-start'
 
 
     }

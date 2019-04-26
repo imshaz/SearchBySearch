@@ -12,7 +12,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import Home from './screens/Home'; 
 
-import Navigation from './screens/component/Navigation'
+import Navigation from './screens/navigation/Navigation'
 
 
 
